@@ -1,4 +1,4 @@
-module execute(
+module execute #(parameter N = 64) (
 	input logic AluSrc,
 	input logic [3:0] AluControl,
 	input logic [63:0] PC_E, signImm_E, readData1_E, readData2_E,
