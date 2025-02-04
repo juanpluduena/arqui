@@ -1,7 +1,7 @@
 module maindec(
 	input logic [10:0] Op,
 	input logic reset,
-	output logic Reg2Loc, MemtoReg, RegWrite, MemRead, MemWrite, Branch, ERet, NotAnInstr,
+	output logic Reg2Loc, MemtoReg, RegWrite, MemRead, MemWrite, Branch, ERet, NotAnInstr, BranchToReg,
 	output logic [1:0] ALUOp, ALUSrc
 );
 	always_comb begin
@@ -14,6 +14,7 @@ module maindec(
 			MemRead = 1'b0;
 			MemWrite = 1'b0;
 			Branch = 1'b0;
+			BranchToReg = 1'b0;
 			ALUOp = 2'b00;
 			ERet = 1'b0;
 			NotAnInstr = 1'b0;
@@ -30,6 +31,7 @@ module maindec(
 					MemRead = 1'b1;
 					MemWrite = 1'b0;
 					Branch = 1'b0;
+					BranchToReg = 1'b0;
 					ALUOp = 2'b00;
 					ERet = 1'b0;
 					NotAnInstr = 1'b0;
@@ -43,6 +45,7 @@ module maindec(
 					MemRead = 1'b0;
 					MemWrite = 1'b1;
 					Branch = 1'b0;
+					BranchToReg = 1'b0;
 					ALUOp = 2'b00;
 					ERet = 1'b0;
 					NotAnInstr = 1'b0;
@@ -63,6 +66,7 @@ module maindec(
 					MemRead = 1'b0;
 					MemWrite = 1'b0;
 					Branch = 1'b1;
+					BranchToReg = 1'b0;
 					ALUOp = 2'b01;
 					ERet = 1'b0;
 					NotAnInstr = 1'b0;
@@ -79,6 +83,7 @@ module maindec(
 					MemRead = 1'b0;
 					MemWrite = 1'b0;
 					Branch = 1'b0;
+					BranchToReg = 1'b0;
 					ALUOp = 2'b10;
 					ERet = 1'b0;
 					NotAnInstr = 1'b0;
@@ -92,6 +97,7 @@ module maindec(
 					MemRead = 1'b0;
 					MemWrite = 1'b0;
 					Branch = 1'b1;
+					BranchToReg = 1'b0;
 					ALUOp = 2'b01;
 					ERet = 1'b1;
 					NotAnInstr = 1'b0;
@@ -105,6 +111,21 @@ module maindec(
 					MemRead = 1'b0;
 					MemWrite = 1'b0;
 					Branch = 1'b0;
+					BranchToReg = 1'b0;
+					ALUOp = 2'b01;
+					ERet = 1'b0;
+					NotAnInstr = 1'b0;
+				end
+				
+				11'b110_1011_0000: begin // BR
+					Reg2Loc = 1'bx;
+					ALUSrc = 2'bxx;
+					MemtoReg = 1'bx;
+					RegWrite = 1'b0;
+					MemRead = 1'b0;
+					MemWrite = 1'b0;
+					Branch = 1'b1;
+					BranchToReg = 1'b1;
 					ALUOp = 2'b01;
 					ERet = 1'b0;
 					NotAnInstr = 1'b0;
@@ -118,6 +139,7 @@ module maindec(
 					MemRead = 1'b0;
 					MemWrite = 1'b0;
 					Branch = 1'b0;
+					BranchToReg = 1'b0;
 					ALUOp = 2'bxx;
 					ERet = 1'b0;
 					NotAnInstr = 1'b1;
