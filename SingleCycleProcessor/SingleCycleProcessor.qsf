@@ -99,15 +99,6 @@ set_global_assignment -name SYSTEMVERILOG_FILE modulos/controller.sv
 set_global_assignment -name SYSTEMVERILOG_FILE modulos/aludec.sv
 set_global_assignment -name SYSTEMVERILOG_FILE modulos/alu.sv
 set_global_assignment -name SYSTEMVERILOG_FILE modulos/adder.sv
-set_global_assignment -name SYSTEMVERILOG_FILE "test-benches/signext_tb.sv"
-set_global_assignment -name SYSTEMVERILOG_FILE "test-benches/regfile_tb.sv"
-set_global_assignment -name SYSTEMVERILOG_FILE "test-benches/processor_tb.sv"
-set_global_assignment -name SYSTEMVERILOG_FILE "test-benches/maindec_tb.sv"
-set_global_assignment -name SYSTEMVERILOG_FILE "test-benches/imem_tb.sv"
-set_global_assignment -name SYSTEMVERILOG_FILE "test-benches/flopr_tb.sv"
-set_global_assignment -name SYSTEMVERILOG_FILE "test-benches/fetch_tb.sv"
-set_global_assignment -name SYSTEMVERILOG_FILE "test-benches/execute_tb.sv"
-set_global_assignment -name SYSTEMVERILOG_FILE "test-benches/alu_tb.sv"
 set_global_assignment -name EDA_TEST_BENCH_NAME flopr_rb -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id flopr_rb
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME flopr_rb -section_id flopr_rb

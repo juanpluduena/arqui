@@ -1,24 +1,24 @@
-module regfile(
-	input logic clk, we3,
-	input logic [4:0] ra1, ra2, wa3,
-	input logic [63:0] wd3,
-	output logic [63:0] rd1, rd2
-);
-	logic [63:0] REGS [0:31];
+module regfile #(parameter N=64)
+				(input logic clk,	we3,
+			 	 input logic [4:0] ra1, ra2, wa3,
+			 	 input logic [N-1:0] wd3,
+			 	 output logic [N-1:0] rd1, rd2);
+
+	logic [N-1:0] REGS [0:31];
 	
-	initial begin
-		$readmemh("progs/regfile.txt", REGS);
+	initial 
+	begin
+		REGS  = '{default:'0};
+		for (logic [N-1:0] i = 0; i < 'd31; ++i) REGS[i] = i;
 	end
 	
-	always_comb begin
-		rd1 = (ra1 == 5'd31) ? 64'b0 : REGS[ra1];
-		rd2 = (ra2 == 5'd31) ? 64'b0 : REGS[ra2];
-	end
-	
-	always_ff @(posedge clk) begin
-		if (we3 && (wa3 != 31)) begin
+	always @(posedge clk)
+		if (we3)
 			REGS[wa3] <= wd3;
+
+		always_comb begin
+			rd1 <= (ra1 == 5'd31) ? 64'b0 : REGS[ra1];
+			rd2 <= (ra2 == 5'd31) ? 64'b0 : REGS[ra2];
 		end
-	end
-	
+
 endmodule
