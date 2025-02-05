@@ -80,25 +80,6 @@ set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME fetch_tb -section_id fetc
 set_global_assignment -name EDA_TEST_BENCH_NAME execute_tb -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id execute_tb
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME execute_tb -section_id execute_tb
-set_global_assignment -name SYSTEMVERILOG_FILE modulos/writeback.sv
-set_global_assignment -name SYSTEMVERILOG_FILE modulos/sl2.sv
-set_global_assignment -name SYSTEMVERILOG_FILE modulos/signext.sv
-set_global_assignment -name SYSTEMVERILOG_FILE modulos/regfile.sv
-set_global_assignment -name SYSTEMVERILOG_FILE modulos/processor_arm.sv
-set_global_assignment -name SYSTEMVERILOG_FILE modulos/mux2.sv
-set_global_assignment -name SYSTEMVERILOG_FILE modulos/memory.sv
-set_global_assignment -name SYSTEMVERILOG_FILE modulos/maindec.sv
-set_global_assignment -name SYSTEMVERILOG_FILE modulos/imem.sv
-set_global_assignment -name SYSTEMVERILOG_FILE modulos/flopr.sv
-set_global_assignment -name SYSTEMVERILOG_FILE modulos/fetch.sv
-set_global_assignment -name SYSTEMVERILOG_FILE modulos/execute.sv
-set_global_assignment -name VHDL_FILE modulos/dmem.vhd
-set_global_assignment -name SYSTEMVERILOG_FILE modulos/decode.sv
-set_global_assignment -name SYSTEMVERILOG_FILE modulos/datapath.sv
-set_global_assignment -name SYSTEMVERILOG_FILE modulos/controller.sv
-set_global_assignment -name SYSTEMVERILOG_FILE modulos/aludec.sv
-set_global_assignment -name SYSTEMVERILOG_FILE modulos/alu.sv
-set_global_assignment -name SYSTEMVERILOG_FILE modulos/adder.sv
 set_global_assignment -name EDA_TEST_BENCH_NAME flopr_rb -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id flopr_rb
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME flopr_rb -section_id flopr_rb
@@ -118,3 +99,23 @@ set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name SYSTEMVERILOG_FILE "test-benches/processor_tb.sv"
+set_global_assignment -name SYSTEMVERILOG_FILE modulos/writeback.sv
+set_global_assignment -name SYSTEMVERILOG_FILE modulos/sl2.sv
+set_global_assignment -name SYSTEMVERILOG_FILE modulos/signext.sv
+set_global_assignment -name SYSTEMVERILOG_FILE modulos/regfile.sv
+set_global_assignment -name SYSTEMVERILOG_FILE modulos/processor_arm.sv
+set_global_assignment -name SYSTEMVERILOG_FILE modulos/mux2.sv
+set_global_assignment -name SYSTEMVERILOG_FILE modulos/memory.sv
+set_global_assignment -name SYSTEMVERILOG_FILE modulos/maindec.sv
+set_global_assignment -name SYSTEMVERILOG_FILE modulos/imem.sv
+set_global_assignment -name SYSTEMVERILOG_FILE modulos/flopr.sv
+set_global_assignment -name SYSTEMVERILOG_FILE modulos/fetch.sv
+set_global_assignment -name SYSTEMVERILOG_FILE modulos/execute.sv
+set_global_assignment -name VHDL_FILE modulos/dmem.vhd
+set_global_assignment -name SYSTEMVERILOG_FILE modulos/decode.sv
+set_global_assignment -name SYSTEMVERILOG_FILE modulos/datapath.sv
+set_global_assignment -name SYSTEMVERILOG_FILE modulos/controller.sv
+set_global_assignment -name SYSTEMVERILOG_FILE modulos/aludec.sv
+set_global_assignment -name SYSTEMVERILOG_FILE modulos/alu.sv
+set_global_assignment -name SYSTEMVERILOG_FILE modulos/adder.sv

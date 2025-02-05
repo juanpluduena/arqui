@@ -3,8 +3,8 @@
 
 main:
     // Inicialización de registros
-    ADD X1, XZR, X10      // X1 = 10 (valor arbitrario)
-    ADD X2, XZR, X20      // X2 = 20 (valor arbitrario)
+    ADD X1, XZR, 10      // X1 = 10 (valor arbitrario)
+    ADD X2, XZR, 20      // X2 = 20 (valor arbitrario)
     ORR X3, X1, X2       // X3 = X1 | X2 (prueba de ORR)
     AND X4, X1, X2       // X4 = X1 & X2 (prueba de AND)
     ADD X5, X1, X2       // X5 = X1 + X2 (prueba de ADD)
